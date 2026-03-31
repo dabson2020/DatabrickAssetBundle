@@ -1,0 +1,15 @@
+resources:
+  pipelines:
+    pipeline_dlt_pipeline:
+      name: DLT__Pipeline
+      libraries:
+        - glob:
+            include: ../../src/pipelines/DLT_Root/transformations/**
+      schema: dlt_schema
+      continuous: false
+      development: false
+      photon: true
+      channel: CURRENT
+      catalog: ${var.catalog_name}
+      serverless: true
+      root_path: ../../src/pipelines/DLT_Root
